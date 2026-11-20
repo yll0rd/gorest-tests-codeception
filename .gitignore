@@ -1,0 +1,26 @@
+# Dependencies
+/vendor/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Test output and generated files
+/tests/_output/*
+!/tests/_output/.gitignore
+/tests/Support/_generated/*
+!/tests/Support/_generated/.gitignore
+!/tests/Support/_generated/.gitkeep
+
+# Coverage and local tooling
+/coverage/
+.phpunit.result.cache
+.php-cs-fixer.cache
+.phpstorm.meta.php
+.idea/
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db

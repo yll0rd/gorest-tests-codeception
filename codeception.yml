@@ -1,0 +1,25 @@
+namespace: Tests
+support_namespace: Support
+# suite config
+suites:
+    Api:
+        actor: ApiTester
+        path: Api
+        modules:
+            enabled:
+                - Asserts
+                - REST:
+                    url: https://gorest.co.in/public/v3
+                    depends: PhpBrowser
+        step_decorators:
+            - \Codeception\Step\AsJson
+
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/Support/Data
+    support: tests/Support
+
+settings:
+    shuffle: false
+    lint: true
