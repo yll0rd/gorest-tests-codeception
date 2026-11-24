@@ -14,8 +14,8 @@ final class UserCrudCest
 {
     use GoRestTrait;
 
-    private array $user;
-    private string $userId;
+    private array $user = [];
+    private ?string $userId = null;
 
     public function _before(ApiTester $I): void
     {
@@ -88,6 +88,8 @@ final class UserCrudCest
     public function _after(ApiTester $I): void
     {
         // Cleanup: delete the user if it still exists
-        $I->sendDelete("/users/{$this->userId}");
+        if ($this->userId !== null) {
+            $I->sendDelete("/users/{$this->userId}");
+        }
     }
 }

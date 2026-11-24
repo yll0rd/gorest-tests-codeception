@@ -17,10 +17,18 @@ Install the development dependencies:
 composer install
 ```
 
-Set the API token in the environment:
+Create a `.env` file in the project root with your GoREST API token:
 
 ```bash
-export GOREST_TOKEN=your-token
+GOREST_TOKEN=your-token
+```
+
+The `.env` file is ignored by Git. Load it before running the tests:
+
+```bash
+set -a
+source .env
+set +a
 ```
 
 ## Running the tests
